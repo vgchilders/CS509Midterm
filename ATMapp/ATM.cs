@@ -124,19 +124,57 @@ class ATM{
                     adminAccount.CreateAccount(login, pin, holder, startBalance, status);
                     break;
                 case "2":
-                    Console.Write("Enter the account number : ");
-                    int depositAmount = 0;
-                    if(!Int32.TryParse(Console.ReadLine(), out depositAmount)){
-                        Console.WriteLine("Invalid deposit number");
+                    Console.Write("Enter the account number: ");
+                    int accountNum = 0;
+                    if(!Int32.TryParse(Console.ReadLine(), out accountNum)){
+                        Console.WriteLine("Invalid account number (non-integer)");
                         break;
                     }
-                    userAccount.Deposit(depositAmount);
+                    Console.WriteLine($"Below is the info for account # {accountNum}");
+                    adminAccount.SearchAccount(accountNum);
+
+                    Console.Write("To continue deletion, please re-enter the account number: ");
+                    if(!Int32.TryParse(Console.ReadLine(), out accountNum)){
+                        Console.WriteLine("Cancelling Deletion");
+                        break;
+                    }
+                    adminAccount.DeleteAccount(accountNum);
                     break;
                 case "3":
-                    userAccount.CheckBalance();
+                    Console.WriteLine("-----Updating Account-----");
+                    int newAccountNum = 0;
+                    Console.Write("Enter the Account Number: ");
+                    if(!Int32.TryParse(Console.ReadLine(), out newAccountNum)){
+                        Console.WriteLine("Invalid account number (non-integer)");
+                        break;
+                    }
+
+                    Console.Write("Enter the new holder name: ");
+                    string newHolder = Console.ReadLine();
+
+                    Console.Write("Enter the new account status(enable/disable): ");
+                    string newStatus = Console.ReadLine();
+
+                    Console.Write("Enter the new login: ");
+                    string newLogin = Console.ReadLine();
+
+                    int newPin = 0;
+                    Console.Write("Enter the new 5-digit PIN: ");
+                    if(!Int32.TryParse(Console.ReadLine(), out pin)){
+                        Console.WriteLine("Invalid pin number (non-integer)");
+                        break;
+                    }
+
+                    adminAccount.UpdateAccount(newAccountNum, newLogin, newPin, newHolder, newStatus);
                     break;
                 case "4":
-                    userAccount.CheckBalance();
+                    int searchAccountID = 0;
+                    Console.Write("Enter Account Number: ");
+                    if(!Int32.TryParse(Console.ReadLine(), out searchAccountID)){
+                        Console.WriteLine("Invalid account number (non-integer)");
+                        break;
+                    }
+                    adminAccount.SearchAccount(searchAccountID);
                     break;
                 case "6":
                     return;
