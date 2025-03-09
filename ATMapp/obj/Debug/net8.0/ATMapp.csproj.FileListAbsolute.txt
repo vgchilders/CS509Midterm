@@ -47,3 +47,4 @@ C:\Users\valer\ClassStuff\CS509_SystemDesign\CS509Midterm\ATMapp\obj\Debug\net8.
 C:\Users\valer\ClassStuff\CS509_SystemDesign\CS509Midterm\ATMapp\obj\Debug\net8.0\ATMapp.pdb
 C:\Users\valer\ClassStuff\CS509_SystemDesign\CS509Midterm\ATMapp\obj\Debug\net8.0\ATMapp.genruntimeconfig.cache
 C:\Users\valer\ClassStuff\CS509_SystemDesign\CS509Midterm\ATMapp\obj\Debug\net8.0\ref\ATMapp.dll
+C:\Users\valer\ClassStuff\CS509_SystemDesign\CS509Midterm\ATMapp\bin\Debug\net8.0\Ninject.dll
