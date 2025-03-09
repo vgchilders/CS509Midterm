@@ -5,7 +5,7 @@ using System;
 class Con
 {
     // Replace with real MySQL connection string
-    public const string str = "server=localhost;database=atmapp;user=root;password=vgchilders";
+    public const string str = "server=localhost;database=atmapp;user=root;password=password";
 }
 
 public class AccountData
