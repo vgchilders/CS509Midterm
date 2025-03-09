@@ -43,7 +43,7 @@ class ATM{
             var adminAccount = kernel.Get<IAdminAccount>();
             AdminSession(adminAccount);
         }else{
-            var userAccount = kernel.Get<IUserAccount>(new Ninject.Parameters.ConstructorArgument("ID", idNum));
+            var userAccount = kernel.Get<IUserAccount>(new Ninject.Parameters.ConstructorArgument("idNum", idNum));
             UserSession(userAccount);
         }
         Console.WriteLine("-----Ending Session-----");

@@ -10,8 +10,8 @@ public class BuildModule : Ninject.Modules.NinjectModule
 
         // Bind IUserAccount to UserAccount
         Bind<IUserAccount>().To<UserAccount>()
-            .WithConstructorArgument("database", ctx => ctx.Kernel.Get<IDatabase>())
-            .WithConstructorArgument("ID", ""); // ID will be set at runtime
+            .WithConstructorArgument("database", ctx => ctx.Kernel.Get<IDatabase>());
+            //.WithConstructorArgument("ID", ""); // ID will be set at runtime
 
         // Bind IAdminAccount to AdminAccount
         Bind<IAdminAccount>().To<AdminAccount>()
